@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twincat_Automation_Interface", "Twincat_Automation_Interface\Twincat_Automation_Interface.csproj", "{1173CF36-3327-4E6D-89F6-AB0C6F2EB598}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1173CF36-3327-4E6D-89F6-AB0C6F2EB598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1173CF36-3327-4E6D-89F6-AB0C6F2EB598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1173CF36-3327-4E6D-89F6-AB0C6F2EB598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1173CF36-3327-4E6D-89F6-AB0C6F2EB598}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C79A60B5-C7B7-46E6-9C99-811689F53E39}
+	EndGlobalSection
+EndGlobal
