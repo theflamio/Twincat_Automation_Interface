@@ -1,7 +1,3 @@
-using Xunit;
-using Twincat_Automation_Interface;
-using System;
-
 namespace unittest
 {
     public class CommandLineArgumentParserTests : IDisposable
