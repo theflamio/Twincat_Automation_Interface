@@ -14,3 +14,9 @@ Here are the general steps to install TwinCAT Engineering:
     d. Follow the on-screen instructions to proceed with the installation.
 
 4: Trial license Activation link: https://infosys.beckhoff.com/english.php?content=../content/1033/tc3_licensing/3510308491.html&id=
+
+5: if you want to run Twincat XAE in a non virtual environment you need to turn off hyper V in windows.
+
+6: in TwinCat folder Twincat/3.1/system run the script "win8settick.bat"
+
+now you should be able to develop PLC programs for Beckhoff PLC's have fun :-)
