@@ -6,7 +6,7 @@ using TCatSysManagerLib;
 
 namespace Twincat_Automation_Interface
 {
-    internal class Program
+    class main
     {
         static void Main(string[] args)
         {
