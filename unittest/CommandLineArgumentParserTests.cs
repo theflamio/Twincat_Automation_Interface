@@ -19,29 +19,35 @@ namespace unittest
         [Fact]
         public void TestValidArgumentParsing()
         {
-            string[] args = new string[] { "--input=file.txt", "--output=result.txt", "--verbose=true" };
+            string[] args = new string[] { "--visualStudioFilePath=C:\\Dev\\TwinCatHelloWorld\\HelloWorld\\HelloWorld.sln", "--amsNetId=", "--compileSolution=false", "--runSolution=false", "--help=false" };
 
             parser.ParseArguments(args);
 
-            Assert.True(parser.HasArgument("input"));
-            Assert.True(parser.HasArgument("output"));
-            Assert.True(parser.HasArgument("verbose"));
+            Assert.True(parser.HasArgument("visualStudioFilePath"));
+            Assert.True(parser.HasArgument("amsNetId"));
+            Assert.True(parser.HasArgument("compileSolution"));
+            Assert.True(parser.HasArgument("runSolution"));
+            Assert.True(parser.HasArgument("help"));
 
-            Assert.Equal("file.txt", parser.GetArgumentValue("input"));
-            Assert.Equal("result.txt", parser.GetArgumentValue("output"));
-            Assert.Equal("true", parser.GetArgumentValue("verbose"));
+            Assert.Equal("C:\\Dev\\TwinCatHelloWorld\\HelloWorld\\HelloWorld.sln", parser.GetArgumentValue("visualStudioFilePath"));
+            Assert.Equal(string.Empty, parser.GetArgumentValue("amsNetId"));
+            Assert.Equal("false", parser.GetArgumentValue("compileSolution"));
+            Assert.Equal("false", parser.GetArgumentValue("runSolution"));
+            Assert.Equal("false", parser.GetArgumentValue("help"));
         }
 
         [Fact]
         public void TestInvalidArgumentParsing()
         {
-            string[] args = new string[] { "--input=file.txt", "--invalid=option", "--output=result.txt" };
+            string[] args = new string[] { "--visualStudioFilePath=C:\\Dev\\TwinCatHelloWorld\\HelloWorld\\HelloWorld.sln", "--amsNetId=", "--compileSolution=false", "--help=false" };
 
             parser.ParseArguments(args);
 
-            Assert.True(parser.HasArgument("input"));
-            Assert.False(parser.HasArgument("invalid"));
-            Assert.True(parser.HasArgument("output"));
+            Assert.True(parser.HasArgument("visualStudioFilePath"));
+            Assert.True(parser.HasArgument("amsNetId"));
+            Assert.True(parser.HasArgument("compileSolution"));
+            Assert.False(parser.HasArgument("runSolution"));
+            Assert.True(parser.HasArgument("help"));
         }
     }
 }

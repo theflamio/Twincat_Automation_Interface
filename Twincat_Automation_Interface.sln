@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34003.232
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twincat_Automation_Interface", "Twincat_Automation_Interface\Twincat_Automation_Interface.csproj", "{1173CF36-3327-4E6D-89F6-AB0C6F2EB598}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "unittest", "unittest\unittest.csproj", "{1BCCEC9D-90A0-444B-B212-85A41B00EBC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "unittest", "unittest\unittest.csproj", "{1BCCEC9D-90A0-444B-B212-85A41B00EBC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

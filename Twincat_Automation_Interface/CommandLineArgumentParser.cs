@@ -9,7 +9,7 @@ namespace Twincat_Automation_Interface
     public class CommandLineArgumentParser : ICommandLineArgumentParser
     {
         private Dictionary<string, string> parsedArguments = new Dictionary<string, string>();
-        private List<string> validArgumentNames = new List<string> { "input", "output", "verbose" };
+        private List<string> validArgumentNames = new List<string> { "visualStudioFilePath", "amsNetId", "compileSolution", "runSolution", "help"};
 
         public void ParseArguments(string[] args)
         {
@@ -38,7 +38,11 @@ namespace Twincat_Automation_Interface
             {
                 return parsedArguments[argumentName];
             }
-            return null;
+            else
+            {
+                Console.WriteLine($"Invalid argument value: {argumentName}");
+                return "";
+            }
         }
 
         public bool HasArgument(string argumentName)
