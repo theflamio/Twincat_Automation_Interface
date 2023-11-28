@@ -1,9 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
-
-using EnvDTE80;
-using Microsoft.VisualStudio.VSHelp;
-using TCatSysManagerLib;
+﻿using EnvDTE80;
 
 namespace Twincat_Automation_Interface
 {
