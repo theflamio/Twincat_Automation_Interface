@@ -13,6 +13,8 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  testResultsDirectory: '$(System.DefaultWorkingDirectory)/TestResults'
+  coverageDirectory: '$(System.DefaultWorkingDirectory)/CodeCoverage'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -32,3 +34,4 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    diagnosticsEnabled: True
