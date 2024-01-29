@@ -30,16 +30,28 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+- task: DotNetCoreCLI@2
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
-    codeCoverageEnabled: true
+    command: 'test'
+    projects: '$(solution)'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage" --results-directory $(testResultsDirectory)'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '$(testResultsDirectory)/*.trx'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+
+- task: ReportGenerator@4
+  inputs:
+    reports: '$(testResultsDirectory)/*.xml'
+    targetdir: '$(coverageDirectory)'
+    reporttypes: 'Cobertura'
 
 - task: PublishCodeCoverageResults@1
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Build.SourcesDirectory)/TestResults/**/*.coverage'
+    summaryFileLocation: '$(coverageDirectory)/**/coverage.cobertura.xml'
 
 - task: PublishBuildArtifacts@1
   inputs:
