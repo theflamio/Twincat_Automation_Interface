@@ -30,11 +30,19 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
+- task: VSTest@3
   inputs:
-    command: 'test'
-    projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) --collect "Code coverage" --results-directory $(testResultsDirectory)'
+    testSelector: 'testRun'
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    codeCoverageEnabled: true
+    testRunTitle: 'Unittest'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'VSTest'
+    testResultsFiles: '**/*.trx'  # Update the path if your test results are in a different folder
+    searchFolder: '$(System.DefaultWorkingDirectory)'
+    testRunTitle: 'Unittest'
 
 - task: PublishBuildArtifacts@1
   inputs:
