@@ -17,6 +17,8 @@ variables:
   coverageDirectory: '$(System.DefaultWorkingDirectory)/CodeCoverage'
 
 steps:
+- checkout: self
+  fetchDepth: 0
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
