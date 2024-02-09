@@ -16,7 +16,11 @@ namespace Twincat_Automation_Interface
         {
             string solutionPath = parser.GetArgumentValue("visualStudioFilePath");
 
-            if (File.Exists(solutionPath) == false)
+            if (File.Exists(solutionPath))
+            {
+                Console.WriteLine("Visual studio solution found!");
+            }
+            else
             {
                 Console.WriteLine("Visual studio solution path dose not exist!");
                 Environment.Exit(1);
